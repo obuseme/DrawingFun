@@ -13,7 +13,6 @@
 		C9B0BFC319E89EDE00757F58 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B0BFC219E89EDE00757F58 /* Images.xcassets */; };
 		C9B0BFC619E89EDE00757F58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B0BFC419E89EDE00757F58 /* LaunchScreen.xib */; };
 		C9B0BFD219E89EDF00757F58 /* DrawingFunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFD119E89EDF00757F58 /* DrawingFunTests.swift */; };
-		C9B0BFDC19E8A04F00757F58 /* PlayPauseIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFDB19E8A04F00757F58 /* PlayPauseIconView.swift */; };
 		C9B0BFDE19E8D13B00757F58 /* DrawOnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFDD19E8D13B00757F58 /* DrawOnView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		C9B0BFCB19E89EDF00757F58 /* DrawingFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B0BFD019E89EDF00757F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B0BFD119E89EDF00757F58 /* DrawingFunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingFunTests.swift; sourceTree = "<group>"; };
-		C9B0BFDB19E8A04F00757F58 /* PlayPauseIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPauseIconView.swift; sourceTree = "<group>"; };
 		C9B0BFDD19E8D13B00757F58 /* DrawOnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawOnView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +85,6 @@
 				C9B0BFC219E89EDE00757F58 /* Images.xcassets */,
 				C9B0BFC419E89EDE00757F58 /* LaunchScreen.xib */,
 				C9B0BFB919E89EDE00757F58 /* Supporting Files */,
-				C9B0BFDB19E8A04F00757F58 /* PlayPauseIconView.swift */,
 				C9B0BFDD19E8D13B00757F58 /* DrawOnView.swift */,
 			);
 			path = DrawingFun;
@@ -218,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B0BFDC19E8A04F00757F58 /* PlayPauseIconView.swift in Sources */,
 				C9B0BFDE19E8D13B00757F58 /* DrawOnView.swift in Sources */,
 				C9B0BFBE19E89EDE00757F58 /* ViewController.swift in Sources */,
 				C9B0BFBC19E89EDE00757F58 /* AppDelegate.swift in Sources */,
@@ -413,6 +409,7 @@
 				C9B0BFD719E89EDF00757F58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9B0BFD819E89EDF00757F58 /* Build configuration list for PBXNativeTarget "DrawingFunTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +418,7 @@
 				C9B0BFDA19E89EDF00757F58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

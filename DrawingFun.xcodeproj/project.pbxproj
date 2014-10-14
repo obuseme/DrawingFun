@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93F5B5B19ECBD75008FC494 /* DrawOnViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F5B5A19ECBD75008FC494 /* DrawOnViewTests.swift */; };
+		C93F5B5C19ECBFC7008FC494 /* DrawOnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFDD19E8D13B00757F58 /* DrawOnView.swift */; };
 		C9B0BFBC19E89EDE00757F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFBB19E89EDE00757F58 /* AppDelegate.swift */; };
 		C9B0BFBE19E89EDE00757F58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFBD19E89EDE00757F58 /* ViewController.swift */; };
 		C9B0BFC119E89EDE00757F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B0BFBF19E89EDE00757F58 /* Main.storyboard */; };
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93F5B5A19ECBD75008FC494 /* DrawOnViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawOnViewTests.swift; sourceTree = "<group>"; };
 		C9B0BFB619E89EDE00757F58 /* DrawingFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B0BFBA19E89EDE00757F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B0BFBB19E89EDE00757F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 			children = (
 				C9B0BFD119E89EDF00757F58 /* DrawingFunTests.swift */,
 				C9B0BFCF19E89EDF00757F58 /* Supporting Files */,
+				C93F5B5A19ECBD75008FC494 /* DrawOnViewTests.swift */,
 			);
 			path = DrawingFunTests;
 			sourceTree = "<group>";
@@ -226,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B0BFD219E89EDF00757F58 /* DrawingFunTests.swift in Sources */,
+				C93F5B5B19ECBD75008FC494 /* DrawOnViewTests.swift in Sources */,
+				C93F5B5C19ECBFC7008FC494 /* DrawOnView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,9 +43,21 @@ class ViewController: UIViewController {
             drawView.startPoint = touchPoint
         } else if sender.state == UIGestureRecognizerState.Changed {
             endPointLabel.text = NSStringFromCGPoint(touchPoint)
-            drawView.touchPoint = touchPoint
+            drawView.endPoint = touchPoint
             drawView.setNeedsDisplay()
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            drawView.addLine()
         }
+    }
+    
+    @IBAction func undo(sender:UIButton) {
+        drawView.removeLast()
+        drawView.setNeedsDisplay()
+    }
+    
+    @IBAction func clear(sender:UIButton) {
+        drawView.clearAll()
+        drawView.setNeedsDisplay()
     }
 
 }

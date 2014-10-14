@@ -12,19 +12,58 @@ import UIKit
 
 class DrawOnView: UIView {
     
-    var touchPoint : CGPoint?
+    var endPoint : CGPoint?
     var startPoint : CGPoint?
     
+    var lastStart : CGPoint?
+    
+    var oldLines = Array<(CGPoint, CGPoint)>()
+    
     override func drawRect(rect: CGRect) {
-        if let point = touchPoint {
+        let ctx = UIGraphicsGetCurrentContext()
+        drawCurrentDragLine(ctx)
+        drawOldLines(ctx)
+    }
+    
+    func removeLast() {
+        endPoint = nil
+        startPoint = nil
+        oldLines.removeLast()
+    }
+    
+    func clearAll() {
+        endPoint = nil
+        startPoint = nil
+        oldLines.removeAll(keepCapacity: false)
+    }
+    
+    func addLine() {
+        if let end = endPoint {
             if let start = startPoint {
-                let ctx = UIGraphicsGetCurrentContext()
-                CGContextMoveToPoint(ctx, start.x, start.y)
-                CGContextAddLineToPoint(ctx, point.x, point.y)
-                CGContextStrokePath(ctx)
+                oldLines.append((start,end))
+            }
+        }
+
+    }
+    
+    func drawOldLines(ctx: CGContextRef) {
+        for (start,end) in oldLines {
+            drawLine(ctx, withStart:start, andEnd:end)
+        }
+    }
+    
+    func drawCurrentDragLine(ctx: CGContextRef) {
+        if let end = endPoint {
+            if let start = startPoint {
+                drawLine(ctx, withStart:start, andEnd:end)
             }
         }
     }
     
+    func drawLine(ctx: CGContextRef, withStart start: CGPoint, andEnd end: CGPoint) {
+        CGContextMoveToPoint(ctx, start.x, start.y)
+        CGContextAddLineToPoint(ctx, end.x, end.y)
+        CGContextStrokePath(ctx)
+    }
     
 }

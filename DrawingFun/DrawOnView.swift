@@ -23,7 +23,12 @@ class DrawOnView: UIView {
     
     var oldLines = Array<(CGPoint, CGPoint)>()
     
+    var centerX : CGFloat?
+    var centerY : CGFloat?
+    
     override func drawRect(rect: CGRect) {
+        centerX = self.frame.size.width / 2
+        centerY = self.frame.size.height / 2
         let ctx = UIGraphicsGetCurrentContext()
         drawCurrentDragLine(ctx)
         drawOldLines(ctx)
@@ -92,42 +97,30 @@ class DrawOnView: UIView {
     }
     
     func draw1oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.2
-        let x = centerX + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
     func draw2oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.4
-        let x = centerX + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
     func draw3oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.2
-        let x = centerX + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
     func draw4oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.4
-        let x = centerX + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
@@ -138,42 +131,30 @@ class DrawOnView: UIView {
     }
    
     func draw7oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.2
-        let x = centerX - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
     func draw8oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.4
-        let x = centerX - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
 
     func draw9oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.2
-        let x = centerX - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
     func draw10oClockPoint(ctx: CGContextRef) {
-        let centerX = self.frame.size.width / 2
-        let centerY = self.frame.size.height / 2
-        
         let radius = self.frame.size.height * 0.4
-        let x = centerX - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
-        let y = centerY - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        let x = centerX! - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
+        let y = centerY! - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
 

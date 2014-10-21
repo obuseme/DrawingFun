@@ -26,7 +26,7 @@ class DotTests: XCTestCase {
         // This is an example of a functional test case.
         let testBorderRect = CGRectMake(0, 0, 100, 100)
         let dot = Dot(frame: testBorderRect)
-        XCTAssert(dot.borderRect == testBorderRect, "The provided borderRect did not match.")
+        XCTAssert(dot.frame == testBorderRect, "The provided CGRect did not match the Dot's frame.")
     }
     
 }

@@ -12,11 +12,8 @@ import CoreGraphics
 
 class Dot : UIView {
     
-    var borderRect : CGRect? //Represents the border of this dot for intersection checking
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        borderRect = frame
     }
 
     required init(coder aDecoder: NSCoder) {

@@ -15,6 +15,7 @@ import Foundation
 class DrawOnView: UIView {
     
     let RADIAN_SPLIT = 0.2
+    let DOT_RADIUS = CGFloat(8.0)
     
     var endPoint : CGPoint?
     var startPoint : CGPoint?
@@ -25,8 +26,14 @@ class DrawOnView: UIView {
     
     var centerX : CGFloat?
     var centerY : CGFloat?
-
-    var centerRect : CGRect?
+    
+    var centerDot : Dot?
+    var twelveDot : Dot?
+    var twoDot : Dot?
+    var fourDot : Dot?
+    var sixDot : Dot?
+    var eightDot : Dot?
+    var tenDot : Dot?
     
     override func drawRect(rect: CGRect) {
         centerX = self.frame.size.width / 2
@@ -36,15 +43,32 @@ class DrawOnView: UIView {
         drawOldLines(ctx)
         drawGlyphBoard(ctx)
 
- if let end = endPoint {
+        if let end = endPoint {
             if let start = startPoint {
-                if (rectContainsLine(centerRect!, lineStart: start, lineEnd: end)){
-                    NSLog("Intersects yo!")
+                if (centerDot!.touchesLine(start, lineEnd: end)){
+                    NSLog("Intersects Center!")
                 }
+                else if (twoDot!.touchesLine(start, lineEnd: end)){
+                    NSLog("Intersects 2 o'clock!")
+                }
+                else if (fourDot!.touchesLine(start, lineEnd: end)){
+                    NSLog("Intersects 4 o'clock!")
+                }
+                else if (sixDot!.touchesLine(start, lineEnd: end)){
+                    NSLog("Intersects 6 o'clock!")
+                }
+                else if (eightDot!.touchesLine(start, lineEnd: end)){
+                    NSLog("Intersects 8 o'clock!")
+                }
+                else if (tenDot!.touchesLine(start, lineEnd: end)){
+                    NSLog("Intersects 10 o'clock!")
+                }
+                else if (twelveDot!.touchesLine(start, lineEnd: end)){
+                    NSLog("Intersects 12 o'clock!")
+                }
+                
             }
         }
-
-        
     }
     
     func drawGlyphBoard(ctx : CGContextRef) {
@@ -103,10 +127,9 @@ class DrawOnView: UIView {
     }
     
     func drawCenterPoint(ctx: CGContextRef) {
-        let radius = self.frame.size.height * 0.2
         let x = self.frame.size.width / 2
         let y = self.frame.size.height / 2
-        centerRect = CGRectMake(x, y, radius, radius)
+        centerDot = Dot(frame: CGRectMake(x, y, DOT_RADIUS, DOT_RADIUS))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx);
     }
     
@@ -121,6 +144,7 @@ class DrawOnView: UIView {
         let radius = self.frame.size.height * 0.4
         let x = centerX! + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
         let y = centerY! - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        twoDot = Dot(frame: CGRectMake(x, y, DOT_RADIUS, DOT_RADIUS))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
@@ -135,12 +159,14 @@ class DrawOnView: UIView {
         let radius = self.frame.size.height * 0.4
         let x = centerX! + radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
         let y = centerY! + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        fourDot = Dot(frame: CGRectMake(x, y, DOT_RADIUS, DOT_RADIUS))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
     func draw6oClockPoint(ctx: CGContextRef) {
         let x = self.frame.size.width / 2
         let y = (self.frame.size.height * 0.9)
+        sixDot = Dot(frame: CGRectMake(x, y, DOT_RADIUS, DOT_RADIUS))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
    
@@ -155,6 +181,7 @@ class DrawOnView: UIView {
         let radius = self.frame.size.height * 0.4
         let x = centerX! - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
         let y = centerY! + radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        eightDot = Dot(frame: CGRectMake(x, y, DOT_RADIUS, DOT_RADIUS))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
 
@@ -169,6 +196,7 @@ class DrawOnView: UIView {
         let radius = self.frame.size.height * 0.4
         let x = centerX! - radius * CGFloat(cos(RADIAN_SPLIT * M_PI))
         let y = centerY! - radius * CGFloat(sin(RADIAN_SPLIT * M_PI))
+        tenDot = Dot(frame: CGRectMake(x, y, DOT_RADIUS, DOT_RADIUS))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
 
@@ -176,6 +204,7 @@ class DrawOnView: UIView {
         let x = self.frame.size.width / 2
         //OK so what is radius then??
         let y = (self.frame.size.height * 0.1)
+        twelveDot = Dot(frame: CGRectMake(x, y, DOT_RADIUS, DOT_RADIUS))
         drawCircleAtPoint(CGPointMake(x, y), withContext: ctx)
     }
     
@@ -208,56 +237,5 @@ class DrawOnView: UIView {
         
     }
 
-    //    - (BOOL)rectContainsLine:(CGRect)rect startPoint:(CGPoint)lineStart endPoint:(CGPoint)lineEnd
-    func rectContainsLine(rect: CGRect, lineStart: CGPoint, lineEnd: CGPoint) -> Bool {
-        
-        /*Test whether the line intersects any of:
-        *- the bottom edge of the rectangle
-        *- the right edge of the rectangle
-        *- the top edge of the rectangle
-        *- the left edge of the rectangle
-        *- the interior of the rectangle (both points inside)
-        */
-        
-        return (lineIntersectsLine(lineStart, line1End: lineEnd, line2Start: CGPointMake(rect.origin.x, rect.origin.y), line2End: CGPointMake(rect.origin.x + rect.size.width, rect.origin.y)) ||
-            lineIntersectsLine(lineStart, line1End: lineEnd, line2Start: CGPointMake(rect.origin.x + rect.size.width, rect.origin.y), line2End: CGPointMake(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height)) ||
-            lineIntersectsLine(lineStart, line1End: lineEnd, line2Start: CGPointMake(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height), line2End: CGPointMake(rect.origin.x, rect.origin.y + rect.size.height)) ||
-            lineIntersectsLine(lineStart, line1End: lineEnd, line2Start: CGPointMake(rect.origin.x, rect.origin.y + rect.size.height), line2End: CGPointMake(rect.origin.x, rect.origin.y)) ||
-            (CGRectContainsPoint(rect, lineStart) && CGRectContainsPoint(rect, lineEnd)));
-    }
-
-    
-
-//    BOOL (^LineIntersectsLine)(CGPoint, CGPoint, CGPoint, CGPoint) = ^BOOL(CGPoint line1Start, CGPoint line1End, CGPoint line2Start, CGPoint line2End) {
-    func lineIntersectsLine(line1Start: CGPoint, line1End: CGPoint, line2Start: CGPoint, line2End: CGPoint) -> Bool {
-
-         //Distance between the lines' starting rows times line2's horizontal length
-        var q = (line1Start.y - line2Start.y) * (line2End.x - line2Start.x) - (line1Start.x - line2Start.x) * (line2End.y - line2Start.y);
-        var d =
-            //Line 1's horizontal length times line 2's vertical length
-            (line1End.x - line1Start.x) * (line2End.y - line2Start.y)
-            //Line 1's vertical length times line 2's horizontal length
-            - (line1End.y - line1Start.y) * (line2End.x - line2Start.x);
-        
-        if( d == 0 ) {
-            return false;
-        }
-        
-        var r = q / d;
-        
-        q =
-            //Distance between the lines' starting rows times line 1's horizontal length
-            (line1Start.y - line2Start.y) * (line1End.x - line1Start.x)
-            //Distance between the lines' starting columns times line 1's vertical length
-            - (line1Start.x - line2Start.x) * (line1End.y - line1Start.y);
-        
-        var s = q / d;
-        if( r < 0 || r > 1 || s < 0 || s > 1 ) {
-            return false;
-        }
-        
-        return true;
-
-    }
 
 }

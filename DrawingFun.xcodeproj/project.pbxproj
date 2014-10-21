@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C91FA24419F5DA5E000EBF89 /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FA24319F5DA5E000EBF89 /* Dot.swift */; };
+		C91FA24619F5DC99000EBF89 /* DotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FA24519F5DC99000EBF89 /* DotTests.swift */; };
+		C91FA24819F5DF9C000EBF89 /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FA24319F5DA5E000EBF89 /* Dot.swift */; };
 		C93F5B5B19ECBD75008FC494 /* DrawOnViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93F5B5A19ECBD75008FC494 /* DrawOnViewTests.swift */; };
 		C93F5B5C19ECBFC7008FC494 /* DrawOnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFDD19E8D13B00757F58 /* DrawOnView.swift */; };
 		C9B0BFBC19E89EDE00757F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B0BFBB19E89EDE00757F58 /* AppDelegate.swift */; };
@@ -29,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C91FA24319F5DA5E000EBF89 /* Dot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		C91FA24519F5DC99000EBF89 /* DotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotTests.swift; sourceTree = "<group>"; };
 		C93F5B5A19ECBD75008FC494 /* DrawOnViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawOnViewTests.swift; sourceTree = "<group>"; };
 		C9B0BFB619E89EDE00757F58 /* DrawingFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B0BFBA19E89EDE00757F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 				C9B0BFC419E89EDE00757F58 /* LaunchScreen.xib */,
 				C9B0BFB919E89EDE00757F58 /* Supporting Files */,
 				C9B0BFDD19E8D13B00757F58 /* DrawOnView.swift */,
+				C91FA24319F5DA5E000EBF89 /* Dot.swift */,
 			);
 			path = DrawingFun;
 			sourceTree = "<group>";
@@ -107,6 +113,7 @@
 				C9B0BFD119E89EDF00757F58 /* DrawingFunTests.swift */,
 				C9B0BFCF19E89EDF00757F58 /* Supporting Files */,
 				C93F5B5A19ECBD75008FC494 /* DrawOnViewTests.swift */,
+				C91FA24519F5DC99000EBF89 /* DotTests.swift */,
 			);
 			path = DrawingFunTests;
 			sourceTree = "<group>";
@@ -222,6 +229,7 @@
 				C9B0BFDE19E8D13B00757F58 /* DrawOnView.swift in Sources */,
 				C9B0BFBE19E89EDE00757F58 /* ViewController.swift in Sources */,
 				C9B0BFBC19E89EDE00757F58 /* AppDelegate.swift in Sources */,
+				C91FA24419F5DA5E000EBF89 /* Dot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +240,8 @@
 				C9B0BFD219E89EDF00757F58 /* DrawingFunTests.swift in Sources */,
 				C93F5B5B19ECBD75008FC494 /* DrawOnViewTests.swift in Sources */,
 				C93F5B5C19ECBFC7008FC494 /* DrawOnView.swift in Sources */,
+				C91FA24819F5DF9C000EBF89 /* Dot.swift in Sources */,
+				C91FA24619F5DC99000EBF89 /* DotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

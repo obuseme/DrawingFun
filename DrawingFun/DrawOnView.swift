@@ -13,7 +13,19 @@ import CoreGraphics
 import Foundation
 
 class DrawOnView: UIView {
-    
+// Glyph Dot Id's (11 in total)
+//
+//      10
+//  9    |    2
+//   \   |   /
+//    8  |  1
+//     \ | /
+//       0
+//     / | \
+//    5  |  3
+//   /   |   \
+//  7    |    4
+//       6
     let RADIAN_SPLIT = 0.2
     let DOT_RADIUS = CGFloat(8.0)
     
